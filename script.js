@@ -20,9 +20,9 @@ const displayLabel = (words) => {
           <h1 class="text-center text-xl font-bold">${word.word}</h1>
           <p class="text-center mt-2">Meaning /Pronounciation</p>
           <h1 class="text-center mt-2 text-[#18181B]">${word.meaning}</h1>
-          <div class="flex justify-between mt-2">
-            <img src="./assets/fi-sr-info.png" alt="" />
-            <img src="./assets/Vector.png" alt="" />
+          <div class="flex justify-between mt-5 ">
+            <button class="btn hover:bg-[#1A91FF]"><i class="fa-solid fa-circle-info"></i></button>
+            <button class="btn hover:bg-[#1A91FF]"><i class="fa-solid fa-volume-high"></i></button>
           </div>
         </div>`;
     wordsParent.append(vocab);
