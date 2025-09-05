@@ -13,6 +13,11 @@ const spinner = (status) => {
     document.getElementById("spinner").classList.add("hidden");
   }
 };
+function pronounceWord(word) {
+  const utterance = new SpeechSynthesisUtterance(word);
+  utterance.lang = "en-EN"; // English
+  window.speechSynthesis.speak(utterance);
+}
 const loadLesson = () => {
   fetch("https://openapi.programming-hero.com/api/levels/all")
     .then((res) => res.json())
@@ -92,7 +97,9 @@ const displayLabel = (words) => {
             <button onclick="loadDetails(${
               word.id
             })" class="btn hover:bg-[#1A91FF]"><i class="fa-solid fa-circle-info"></i></button>
-            <button class="btn hover:bg-[#1A91FF]"><i class="fa-solid fa-volume-high"></i></button>
+            <button onclick="pronounceWord('${
+              word.word
+            }')" class="btn hover:bg-[#1A91FF]"><i class="fa-solid fa-volume-high"></i></button>
           </div>
         </div>`;
     wordsParent.append(vocab);
